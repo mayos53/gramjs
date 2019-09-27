@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>SetAccountTTLRequest</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link id="style" href="../../css/docs.dark.css" rel="stylesheet">
+    <script>
+    document.getElementById("style").href = "../../css/docs."
+        + (localStorage.getItem("theme") || "light")
+        + ".css";
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Source+Code+Pro"
+          rel="stylesheet">
+</head>
+<body>
+<div id="main_div"><ul class="horizontal"><li><a href="../../index.html">API</a></li><img src="../../img/arrow.svg" alt="/" /><li><a href="../index.html">Methods</a></li><img src="../../img/arrow.svg" alt="/" /><li><a href="index.html">Account</a></li><img src="../../img/arrow.svg" alt="/" /><li><a href="set_account_ttl.html">SetAccountTTLRequest</a></li></ul><h1>SetAccountTTLRequest</h1><p><strong>Only users</strong> can use this method. <a href="#examples">See code examples.</a></p><pre>---functions---
+account.setAccountTTL#2442485e ttl:<a href="../../types/account_days_ttl.html">AccountDaysTTL</a> = <a href="../../index.html#bool">Bool</a></pre><button onclick="cp('const { SetAccountTTLRequest } = require(\'gramjs/tl/functions/account\');');">Copy import to clipboard</button><h3>Returns</h3><table><tr><td><a href="../../index.html#bool">Bool</a></td></tr></table><p>This type has no instances available.</p><table></table><h3>Parameters</h3><table><tr><td><b>ttl</b></td><td style="text-align: center"><a href="../../types/account_days_ttl.html">AccountDaysTTL</a></td><td></td></tr></table><h1>Known RPC errors</h1><p>This request can cause 1 known error:</p><table><tr><td><code>TtlDaysInvalidError</code></td><td>The provided TTL is invalid.</td></tr></table><p>You can import these from <code>gramjs/errors</code>.</p><h1 id="examples">Example</h1><pre><strong>const</strong> { TelegramClient } <strong>=</strong> require('gramjs');
+<strong>const</strong> { functions, types } <strong>=</strong> require('gramjs/tl');
+
+(<strong>async</strong> () => {
+    <strong>const</strong> client <strong>=</strong> <strong>new</strong> TelegramClient(name, apiId, apiHash);
+    await client.start();
+
+    <strong>const</strong> result <strong>= await</strong> client.invoke(<strong>new</strong> functions.account.SetAccountTTLRequest(
+        ttl=<strong>new</strong> types.AccountDaysTTL(
+            days=42
+        )
+    ));
+    console.log(result);
+})();</pre><textarea id="c" class="invisible"></textarea><script>function cp(t){var c=document.getElementById("c");c.value=t;c.select();try{document.execCommand("copy")}catch(e){}}</script></div><script>prependPath = "../../";</script><script src="../../js/search.js"></script></body></html>
