@@ -4,7 +4,7 @@
   "description": "NodeJS MTProto API Telegram client library,",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node gramjs/index.js",
     "test": "jest",
     "postinstall": "npm run tsc",
     "tsc": "tsc",
